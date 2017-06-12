@@ -17,8 +17,10 @@ namespace SamplyGame.Droid
 		{
 			base.OnCreate(bundle);
 			var mLayout = new AbsoluteLayout(this);
-			var surface = UrhoSurface.CreateSurface<SamplyGame>(this, new Urho.ApplicationOptions("Data"));
-			mLayout.AddView(surface);
+		    var surface = UrhoSurface.CreateSurface(this);
+            UrhoSurface.RunInActivity<SamplyGame>(new Urho.ApplicationOptions("Data"));
+            //var surface = UrhoSurface.CreateSurface<SamplyGame>(this, new Urho.ApplicationOptions("Data"));
+            mLayout.AddView(surface);
 			SetContentView(mLayout);
 		}
 
